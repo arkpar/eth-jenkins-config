@@ -1,0 +1,65 @@
+Started on Sep 3, 2015 5:34:02 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881 (detached)
+ > git --version # timeout=10
+ > git -c core.askpass=true ls-remote -h https://github.com/ethereum/cpp-ethereum # timeout=10
+Found 57 remote heads on https://github.com/ethereum/cpp-ethereum
+Ignoring refs/heads/develop as it doesn't match configured refspecs
+Ignoring refs/heads/ethereumx as it doesn't match configured refspecs
+Ignoring refs/heads/fixnonce as it doesn't match configured refspecs
+Ignoring refs/heads/revert-1855-pr/cmake_runtime_output_directory as it doesn't match configured refspecs
+Ignoring refs/heads/CJentzsch-thawing as it doesn't match configured refspecs
+Ignoring refs/heads/transactasyncgas as it doesn't match configured refspecs
+Ignoring refs/heads/hotfix-setminingbenefactorchanger as it doesn't match configured refspecs
+Ignoring refs/heads/whizz as it doesn't match configured refspecs
+Ignoring refs/heads/importkey as it doesn't match configured refspecs
+Ignoring refs/heads/revert-2913-utc_timestamps as it doesn't match configured refspecs
+Ignoring refs/heads/gasEstimation as it doesn't match configured refspecs
+Ignoring refs/heads/develop-vs as it doesn't match configured refspecs
+Ignoring refs/heads/FIXME as it doesn't match configured refspecs
+Ignoring refs/heads/bugFix2 as it doesn't match configured refspecs
+Ignoring refs/heads/deja-nonce as it doesn't match configured refspecs
+Ignoring refs/heads/securenonce as it doesn't match configured refspecs
+Ignoring refs/heads/soliditytestfix as it doesn't match configured refspecs
+Ignoring refs/heads/revert-2384-txqueueasyncverify as it doesn't match configured refspecs
+Ignoring refs/heads/warningfixwin as it doesn't match configured refspecs
+Ignoring refs/heads/plugins as it doesn't match configured refspecs
+Ignoring refs/heads/frontier as it doesn't match configured refspecs
+Ignoring refs/heads/bundledefault as it doesn't match configured refspecs
+Ignoring refs/heads/fuzz as it doesn't match configured refspecs
+Ignoring refs/heads/azrefactor as it doesn't match configured refspecs
+Ignoring refs/heads/nameregnamer as it doesn't match configured refspecs
+Ignoring refs/heads/block2 as it doesn't match configured refspecs
+Ignoring refs/heads/poc-8 as it doesn't match configured refspecs
+Ignoring refs/heads/poc-7 as it doesn't match configured refspecs
+Ignoring refs/heads/bulktxinj as it doesn't match configured refspecs
+Ignoring refs/heads/poc-6 as it doesn't match configured refspecs
+Ignoring refs/heads/revert-2711-cmp0042 as it doesn't match configured refspecs
+Ignoring refs/heads/shh_addition as it doesn't match configured refspecs
+Ignoring refs/heads/gav as it doesn't match configured refspecs
+Ignoring refs/heads/network as it doesn't match configured refspecs
+Ignoring refs/heads/rlpx as it doesn't match configured refspecs
+Ignoring refs/heads/hashrate as it doesn't match configured refspecs
+Ignoring refs/heads/sec-025 as it doesn't match configured refspecs
+Ignoring refs/heads/master as it doesn't match configured refspecs
+Ignoring refs/heads/workingsync as it doesn't match configured refspecs
+Ignoring refs/heads/scryptsupport as it doesn't match configured refspecs
+Ignoring refs/heads/sec-024 as it doesn't match configured refspecs
+Ignoring refs/heads/rmalethzero as it doesn't match configured refspecs
+Ignoring refs/heads/usenonce as it doesn't match configured refspecs
+Ignoring refs/heads/stricterrlp as it doesn't match configured refspecs
+Ignoring refs/heads/subtly-patch-2 as it doesn't match configured refspecs
+Ignoring refs/heads/accurategas as it doesn't match configured refspecs
+Ignoring refs/heads/subtly-patch-1 as it doesn't match configured refspecs
+Ignoring refs/heads/tutorialtweaks as it doesn't match configured refspecs
+Ignoring refs/heads/goclash as it doesn't match configured refspecs
+Ignoring refs/heads/fixwinlog as it doesn't match configured refspecs
+Ignoring refs/heads/issues as it doesn't match configured refspecs
+Ignoring refs/heads/p2p as it doesn't match configured refspecs
+Ignoring refs/heads/threadfix as it doesn't match configured refspecs
+Ignoring refs/heads/audit-1 as it doesn't match configured refspecs
+Ignoring refs/heads/whisper as it doesn't match configured refspecs
+Ignoring refs/heads/txqueueasyncverify as it doesn't match configured refspecs
+Ignoring refs/heads/hotfix-badassert as it doesn't match configured refspecs
+Done. Took 1.8 sec
+No changes

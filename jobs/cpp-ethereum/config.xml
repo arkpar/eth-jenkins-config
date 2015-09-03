@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project plugin="matrix-project@1.6">
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.13.2">
+      <projectUrl>https://github.com/ethereum/cpp-ethereum/</projectUrl>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <refspec>+refs/pull/*:refs/remotes/origin/pr/*</refspec>
+        <url>https://github.com/ethereum/cpp-ethereum</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>${ghprbActualCommit}</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        <relativeTargetDir>cpp-ethereum</relativeTargetDir>
+      </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.27">
+      <spec>*/1 * * * *</spec>
+      <triggerPhrase></triggerPhrase>
+      <configVersion>1</configVersion>
+      <adminlist></adminlist>
+      <allowMembersOfWhitelistedOrgsAsAdmin>true</allowMembersOfWhitelistedOrgsAsAdmin>
+      <orgslist>ethereum</orgslist>
+      <cron>*/1 * * * *</cron>
+      <buildDescTemplate></buildDescTemplate>
+      <onlyTriggerPhrase>false</onlyTriggerPhrase>
+      <useGitHubHooks>false</useGitHubHooks>
+      <permitAll>true</permitAll>
+      <whitelist></whitelist>
+      <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <displayBuildErrorsOnDownstreamBuilds>false</displayBuildErrorsOnDownstreamBuilds>
+      <whiteListTargetBranches>
+        <org.jenkinsci.plugins.ghprb.GhprbBranch>
+          <branch></branch>
+        </org.jenkinsci.plugins.ghprb.GhprbBranch>
+      </whiteListTargetBranches>
+      <project>cpp-ethereum</project>
+      <__project class="matrix-project" reference="../../.."/>
+      <gitHubAuthId>a5d5b0c8-6460-4e73-8d63-1e72cc82aa38</gitHubAuthId>
+      <extensions>
+        <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+          <commitStatusContext></commitStatusContext>
+          <triggeredStatus></triggeredStatus>
+          <startedStatus></startedStatus>
+          <statusUrl></statusUrl>
+        </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      </extensions>
+    </org.jenkinsci.plugins.ghprb.GhprbTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>*/1 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <axes/>
+  <builders>
+    <org.jenkinsci.plugins.managedscripts.ScriptBuildStep plugin="managed-scripts@1.2.1">
+      <buildStepId>org.jenkinsci.plugins.managedscripts.ScriptConfig1441205495405</buildStepId>
+      <tokenized>false</tokenized>
+    </org.jenkinsci.plugins.managedscripts.ScriptBuildStep>
+    <hudson.tasks.Shell>
+      <command>./cpp-ethereum-cmake/scripts/ethupdate.sh --no-push --branch develop --project cpp-ethereum</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>./cpp-ethereum-cmake/scripts/ethbuild.sh --build-type Release --cores 4 --project cpp-ethereum</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>./cpp-ethereum/build/test/testeth --log_format=XML --log_sink=results.xml --log_level=all --report_level=no</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <xunit plugin="xunit@1.97">
+      <types>
+        <BoostTestJunitHudsonTestType>
+          <pattern>results.xml</pattern>
+          <skipNoTestFiles>false</skipNoTestFiles>
+          <failIfNotNew>true</failIfNotNew>
+          <deleteOutputFiles>true</deleteOutputFiles>
+          <stopProcessingIfError>true</stopProcessingIfError>
+        </BoostTestJunitHudsonTestType>
+      </types>
+      <thresholds>
+        <org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
+          <unstableThreshold></unstableThreshold>
+          <unstableNewThreshold></unstableNewThreshold>
+          <failureThreshold></failureThreshold>
+          <failureNewThreshold></failureNewThreshold>
+        </org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
+        <org.jenkinsci.plugins.xunit.threshold.SkippedThreshold>
+          <unstableThreshold></unstableThreshold>
+          <unstableNewThreshold></unstableNewThreshold>
+          <failureThreshold></failureThreshold>
+          <failureNewThreshold></failureNewThreshold>
+        </org.jenkinsci.plugins.xunit.threshold.SkippedThreshold>
+      </thresholds>
+      <thresholdMode>1</thresholdMode>
+      <extraConfiguration>
+        <testTimeMargin>3000</testTimeMargin>
+      </extraConfiguration>
+    </xunit>
+  </publishers>
+  <buildWrappers>
+    <EnvInjectBuildWrapper plugin="envinject@1.92.1">
+      <info>
+        <propertiesContent>ETHEREUM_TEST_PATH=${WORKSPACE}/tests</propertiesContent>
+        <loadFilesFromMaster>false</loadFilesFromMaster>
+      </info>
+    </EnvInjectBuildWrapper>
+  </buildWrappers>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>false</runSequentially>
+  </executionStrategy>
+</matrix-project>

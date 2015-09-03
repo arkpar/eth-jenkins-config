@@ -1,0 +1,69 @@
+BASH_FUNC_copy_reference_file%%=() {  f=${1%/};
+ echo "$f" >> /var/jenkins_home/copy_reference_file.log;
+ rel=${f:23};
+ dir=$(dirname ${f});
+ echo " $f -> $rel" >> /var/jenkins_home/copy_reference_file.log;
+ if [[ ! -e /var/jenkins_home/${rel} ]]; then
+ echo "copy $rel to JENKINS_HOME" >> /var/jenkins_home/copy_reference_file.log;
+ mkdir -p /var/jenkins_home/${dir:23};
+ cp -r /usr/share/jenkins/ref/${rel} /var/jenkins_home/${rel};
+ [[ ${rel} == plugins/*.jpi ]] && touch /var/jenkins_home/${rel}.pinned;
+ fi
+}
+BUILD_CAUSE=UPSTREAMTRIGGER
+BUILD_CAUSE_UPSTREAMTRIGGER=true
+BUILD_DISPLAY_NAME=#10
+BUILD_ID=10
+BUILD_NUMBER=10
+BUILD_TAG=jenkins-cpp-ethereum-default-10
+BUILD_URL=http://localhost:8080/job/cpp-ethereum/default/10/
+COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
+ETHEREUM_TEST_PATH=/var/jenkins_home/jobs/cpp-ethereum/workspace/default/tests
+EXECUTOR_NUMBER=0
+GIT_BRANCH=detached
+GIT_COMMIT=f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881
+GIT_URL=https://github.com/ethereum/cpp-ethereum
+HOME=/var/jenkins_home
+HOSTNAME=eb225efaa61d
+HUDSON_HOME=/var/jenkins_home
+HUDSON_SERVER_COOKIE=2da60c64dd66ca3c
+HUDSON_URL=http://localhost:8080/
+JENKINS_HOME=/var/jenkins_home
+JENKINS_SERVER_COOKIE=2da60c64dd66ca3c
+JENKINS_SHA=59215da16f9f8a781d185dde683c05fcf11450ef
+JENKINS_SLAVE_AGENT_PORT=50000
+JENKINS_UC=https://updates.jenkins-ci.org
+JENKINS_URL=http://localhost:8080/
+JENKINS_VERSION=1.609.2
+JOB_NAME=cpp-ethereum/default
+JOB_URL=http://localhost:8080/job/cpp-ethereum/default/
+NODE_LABELS=master
+NODE_NAME=master
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+ROOT_BUILD_CAUSE=GHPRBCAUSE
+ROOT_BUILD_CAUSE_GHPRBCAUSE=true
+SHLVL=0
+TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888
+WORKSPACE=/var/jenkins_home/jobs/cpp-ethereum/workspace/default
+ghprbActualCommit=f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881
+ghprbActualCommitAuthor=Lefteris Karapetsas
+ghprbActualCommitAuthorEmail=lefteris@refu.co
+ghprbCommentBody=null
+ghprbPullAuthorEmail=
+ghprbPullAuthorLogin=LefterisJP
+ghprbPullAuthorLoginMention=@LefterisJP
+ghprbPullDescription=GitHub pull request #2958 of commit f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881, no merge conflicts.
+ghprbPullId=2958
+ghprbPullLink=https://github.com/ethereum/cpp-ethereum/pull/2958
+ghprbPullLongDescription=Since jenkins succeeded with my own fork, testing with the main repo and our jenkins bot.
+
+DONT merge
+ghprbPullTitle=poke jenkins
+ghprbSourceBranch=throwaway_pr5
+ghprbTargetBranch=develop
+ghprbTriggerAuthor=
+ghprbTriggerAuthorEmail=
+ghprbTriggerAuthorLogin=
+ghprbTriggerAuthorLoginMention=
+sha1=origin/pr/2958/merge

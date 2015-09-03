@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.managedscripts.ScriptBuildStepConfigProvider plugin="managed-scripts@1.2.1">
+  <configs>
+    <entry>
+      <string>org.jenkinsci.plugins.managedscripts.ScriptConfig1441205495405</string>
+      <org.jenkinsci.plugins.managedscripts.ScriptConfig>
+        <id>org.jenkinsci.plugins.managedscripts.ScriptConfig1441205495405</id>
+        <name>Ensure cpp-ethereum-cmake is there</name>
+        <comment>Clone cpp-ethereum-cmake if it&apos;s not there</comment>
+        <content>if [ ! -d cpp-ethereum-cmake ]; then
+    git clone https://github.com/ethereum/cpp-ethereum-cmake
+fi</content>
+        <args/>
+      </org.jenkinsci.plugins.managedscripts.ScriptConfig>
+    </entry>
+  </configs>
+</org.jenkinsci.plugins.managedscripts.ScriptBuildStepConfigProvider>

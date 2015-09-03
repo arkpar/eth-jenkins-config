@@ -1,0 +1,175 @@
+Started by upstream project "[8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAweoBn6WflJ+skFBbqpJRmpRamlufoAyWDy8scAAAA=[0mcpp-ethereum" build number [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYR/az8JP3kggLd1JKM1KLU0lx9QwMAZLHaYskAAAA=[0m10
+originally caused by:
+ GitHub pull request #2958 of commit f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881, no merge conflicts.
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/jobs/cpp-ethereum/workspace/default
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ethereum/cpp-ethereum # timeout=10
+Fetching upstream changes from https://github.com/ethereum/cpp-ethereum
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ethereum/cpp-ethereum +refs/pull/*:refs/remotes/origin/pr/*
+Checking out Revision f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881 (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881
+First time build. Skipping changelog.
+[EnvInject] - Executing scripts and injecting environment variables after the SCM step.
+[EnvInject] - Injecting as environment variables the properties content 
+ETHEREUM_TEST_PATH=${WORKSPACE}/tests
+
+[EnvInject] - Variables injected successfully.
+executing script 'Ensure cpp-ethereum-cmake is there'
+[default] $ /bin/sh /tmp/build_step_template3278394831219868276.sh
+[default] $ /bin/sh -xe /tmp/hudson1980274484549313411.sh
++ ./cpp-ethereum-cmake/scripts/ethupdate.sh --no-push --branch develop --project cpp-ethereum
+ETHUPDATE - WARNING: Not updating cpp-ethereum because it's not in the develop branch
+fatal: 'upstream' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ETHUPDATE - ERROR: Pulling changes for repository cpp-ethereum-cmake from upstream into the develop branch failed.
+[default] $ /bin/sh -xe /tmp/hudson3726402517193482332.sh
++ ./cpp-ethereum-cmake/scripts/ethbuild.sh --build-type Release --cores 4
+BUILD WARNING: cpp-ethereum was in (unnamed branch) branch, while building on develop was requested.
+Previous HEAD position was f30c6cb... poke jenkins
+Switched to branch 'develop'
+Your branch is up-to-date with 'origin/develop'.
+-- CMAKE_PREFIX_PATH 
+CMake Helper Path: /var/jenkins_home/jobs/cpp-ethereum/workspace/default/cpp-ethereum-cmake
+CMake Script Path: /var/jenkins_home/jobs/cpp-ethereum/workspace/default/cpp-ethereum-cmake/scripts
+-- ctest path: /usr/bin/ctest
+-- CryptoPP header: /usr/include
+-- CryptoPP lib   : /usr/lib/libcryptopp.so
+-- LevelDB header: /usr/include
+-- LevelDB lib: /usr/lib/x86_64-linux-gnu/libleveldb.so
+-- Could NOT find rocksdb (missing:  ROCKSDB_INCLUDE_DIR ROCKSDB_LIBRARY) 
+-- RocksDB header: ROCKSDB_INCLUDE_DIR-NOTFOUND
+-- RocksDB lib: ROCKSDB_LIBRARY-NOTFOUND
+-- v8 header: /usr/include
+-- v8 lib   : /usr/lib/libv8.so
+-- Jsoncpp header: /usr/include/jsoncpp
+-- Jsoncpp lib   : /usr/lib/x86_64-linux-gnu/libjsoncpp.so
+-- json-rpc-cpp header: /usr/include
+-- json-rpc-cpp lib   : /usr/lib/libjsonrpccpp-common.so;/usr/lib/libjsonrpccpp-server.so;/usr/lib/libjsonrpccpp-client.so
+-- microhttpd header: /usr/include
+-- microhttpd lib   : /usr/lib/x86_64-linux-gnu/libmicrohttpd.so
+-- microhttpd dll   : 
+-- readline header: /usr/include
+-- readline lib   : /usr/lib/x86_64-linux-gnu/libreadline.so
+-- miniupnpc header: /usr/include
+-- miniupnpc lib   : /usr/lib/libminiupnpc.so
+ - gmp header: /usr/include/x86_64-linux-gnu
+ - gmp lib   : /usr/lib/x86_64-linux-gnu/libgmp.so
+-- curl header: /usr/include
+-- curl lib   : /usr/lib/x86_64-linux-gnu/libcurl.so
+-- Could NOT find cpuid (missing:  CPUID_INCLUDE_DIR CPUID_LIBRARY) 
+-- cpuid header: CPUID_INCLUDE_DIR-NOTFOUND
+-- cpuid lib   : CPUID_LIBRARY-NOTFOUND
+-- opencl header: /usr/include
+-- opencl lib   : /usr/lib/x86_64-linux-gnu/libOpenCL.so
+-- jsonrpcstub location    : /usr/bin/jsonrpcstub
+-- Boost version: 1.54.0
+-- Found the following Boost libraries:
+--   thread
+--   date_time
+--   system
+--   regex
+--   chrono
+--   filesystem
+--   unit_test_framework
+--   program_options
+--   random
+ - boost header: /usr/include
+ - boost lib   : /usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;/usr/lib/x86_64-linux-gnu/libboost_random.so;/usr/lib/x86_64-linux-gnu/libpthread.so
+------------------------------------------------------------------------
+--                  CMake Version                            3.2.2
+-- CMAKE_BUILD_TYPE Build type                               Release
+-- TARGET_PLATFORM  Target platform                          Linux
+-- BUNDLE           Build bundle                             
+--------------------------------------------------------------- features
+--                  Chromium support                         1
+--                  Hardware identification support          FALSE
+--                  HTTP Request support                     TRUE
+-- VMTRACE          VM execution tracing                     OFF
+-- PROFILING        Profiling support                        OFF
+-- FATDB            Full database exploring                  ON
+-- USENPM           Javascript source building               OFF
+-- ROCKSDB          Prefer rocksdb to leveldb                OFF
+-- OLYMPIC          Default to the Olympic network           OFF
+------------------------------------------------------------- components
+-- MINER            Build miner                              ON
+-- ETHKEY           Build wallet tools                       ON
+-- TOOLS            Build basic tools                        ON
+-- SERPENT          Build Serpent language components        ON
+-- GUI              Build GUI components                     ON
+-- TESTS            Build tests                              ON
+-- ETHASHCL         Build OpenCL components                  ON
+-- JSCONSOLE        Build with javascript console            ON
+-- EVMJIT           Build LLVM-based JIT EVM                 ON
+------------------------------------------------------------------------
+
+-- CXXFLAGS: -std=c++11 -Wall -Wno-unknown-pragmas -Wextra -Werror -pedantic -DSHAREDLIB -fPIC  -fuse-ld=gold
+creating build info...
+createBuildInfo()
+-- Using llvm-3.8-dev package from Ubuntu. If does not work, build LLVM and set -DLLVM_DIR=llvm-build/share/llvm/cmake
+-- LLVM include dirs: /usr/lib/llvm-3.8/include
+-- EVM JIT version: 0.9.0
+-- Boost version: 1.54.0
+-- test: ClientBase |  --eth_testfile=BlockTests/bcJS_API_Test --eth_threads=1; --eth_testfile=BlockTests/bcJS_API_Test --eth_threads=3; --eth_testfile=BlockTests/bcJS_API_Test --eth_threads=10; --eth_testfile=BlockTests/bcValidBlockTest --eth_threads=1; --eth_testfile=BlockTests/bcValidBlockTest --eth_threads=3; --eth_testfile=BlockTests/bcValidBlockTest --eth_threads=10
+-- test: JsonRpc |  --eth_testfile=BlockTests/bcJS_API_Test; --eth_testfile=BlockTests/bcValidBlockTest
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /var/jenkins_home/jobs/cpp-ethereum/workspace/default/cpp-ethereum/build
+[  0%] Built target secp256k1
+[  4%] Built target scrypt
+[  4%] [  4%] Built target BuildInfo.h
+Built target ConfigInfo.h
+[ 12%] Built target evmjit
+[ 13%] Built target natspec
+[ 15%] Built target ethash
+[ 16%] Built target evmjit-cpp
+[ 16%] Built target Sentinel.jsonstub
+[ 16%] Built target minerfarm.jsonstub
+[ 16%] Built target minerphonehome.jsonstub
+[ 19%] [ 28%] Built target jsengine
+Built target devcore
+[ 29%] Built target ethash-cl
+[ 30%] Built target evmcore
+[ 32%] Built target jsconsole
+[ 35%] Built target devcrypto
+[ 40%] Built target evmasm
+[ 40%] Built target rlp
+[ 48%] Built target p2p
+[ 55%] Built target ethcore
+[ 57%] Built target lll
+[ 58%] [ 63%] [ 64%] Built target ethkey
+Built target serpent
+Built target ethminer
+[ 66%] Built target evm
+[ 67%] [ 67%] Built target lllc
+Built target sc
+[ 80%] Built target ethereum
+[ 80%] [ 81%] [ 82%] Built target ethvm
+Built target abi
+Built target testutils
+[100%] Built target testeth
+Skipping webthree because directory does not exit
+Skipping solidity because directory does not exit
+Skipping alethzero because directory does not exit
+Skipping mix because directory does not exit
+[default] $ /bin/sh -xe /tmp/hudson370388112328290353.sh
++ git clone https://github.com/ethereum/tests
+fatal: destination path 'tests' already exists and is not an empty directory.
+Build step 'Execute shell' marked build as failure
+[xUnit] [INFO] - Starting to record.
+[xUnit] [INFO] - Processing BoostTest-1.x (default)
+[xUnit] [INFO] - [BoostTest-1.x (default)] - 1 test report file(s) were found with the pattern 'results.xml' relative to '/var/jenkins_home/jobs/cpp-ethereum/workspace/default' for the testing framework 'BoostTest-1.x (default)'.
+[xUnit] [ERROR] - Test reports were found but not all of them are new. Did all the tests run?
+  * /var/jenkins_home/jobs/cpp-ethereum/workspace/default/results.xml is 1 hr 0 min old
+
+[xUnit] [INFO] - Failing BUILD.
+[xUnit] [INFO] - There are errors when processing test results.
+[xUnit] [INFO] - Skipping tests recording.
+[xUnit] [INFO] - Stop build.
+Finished: FAILURE

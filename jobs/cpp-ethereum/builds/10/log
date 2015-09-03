@@ -1,0 +1,19 @@
+GitHub pull request #2958 of commit f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881, no merge conflicts.
+Setting status of f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881 to PENDING with url http://localhost:8080/job/cpp-ethereum/10/ and message: 'Build started sha1 is merged.'
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/jobs/cpp-ethereum/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ethereum/cpp-ethereum # timeout=10
+Fetching upstream changes from https://github.com/ethereum/cpp-ethereum
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ethereum/cpp-ethereum +refs/pull/*:refs/remotes/origin/pr/*
+ > git rev-parse f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881^{commit} # timeout=10
+Checking out Revision f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881 (detached)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881
+First time build. Skipping changelog.
+Triggering [8mha:AAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyxEgYp/az8JP3kggLd1JKM1KLU0lz9lNS0xNKcEn0A3tp0Gc8AAAA=[0mcpp-ethereum ? default
+[8mha:AAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyxEgYp/az8JP3kggLd1JKM1KLU0lz9lNS0xNKcEn0A3tp0Gc8AAAA=[0mcpp-ethereum ? default completed with result FAILURE
+Setting status of f30c6cb0a85f5bd2ccf46cf063fccd69a0c8b881 to FAILURE with url http://localhost:8080/job/cpp-ethereum/10/ and message: 'Build finished. No test results found.'
+Finished: FAILURE
