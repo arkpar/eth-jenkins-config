@@ -1,6 +1,7 @@
 # don't add plain text credentials to version control
 credentials.xml
 # ignore other "secret stuff"
+users/
 secret.key
 secret.key.not-so-secret
 secrets/
