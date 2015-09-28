@@ -25,6 +25,13 @@ RUN apt-get install -y nodejs
 # Needed for the coverage build
 RUN apt-get install -y lcov
 
+# PPA build dependencies
+RUN apt-get install -y cowbuilder pbuilder debhelper
+RUN env DIST=trusty sudo cowbuilder --create --distribution trusty --components "main universe" --basepath /var/cache/pbuilder/trusty-amd64-ethereum.cow --debootstrapopts --keyring=/usr/share/keyrings/ubuntu-archive-keyring.gpg
+RUN env DIST=vivid sudo cowbuilder --create --distribution trusty --components "main universe" --basepath /var/cache/pbuilder/vivid-amd64-ethereum.cow --debootstrapopts --keyring=/usr/share/keyrings/ubuntu-archive-keyring.gpg
+COPY ppa.asc ppa.asc
+RUN gpg --import ppa.asc
+
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
