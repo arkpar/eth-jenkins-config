@@ -20,7 +20,11 @@ RUN apt-get -y install openjdk-7-jdk
 
 
 RUN apt-get update && apt-get install -y wget git curl zip 
+# Needed for the emscript build
 RUN apt-get install -y nodejs
+# Needed for the coverage build
+RUN apt-get install -y lcov
+
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
